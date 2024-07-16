@@ -1,8 +1,8 @@
 import smtplib
 
-with open("/home/vihaan/keys/FRC-EmailBotAppPass.txt").readlines() as __SENDER_INFO:
-    __SENDER_EMAIL = __SENDER_INFO[0].strip("\n")
-    __SENDER_PASS = __SENDER_INFO[1].strip("\n")
+__SENDER_INFO = list(open("/home/vihaan/keys/FRC-EmailBotAppPass.txt"))
+__SENDER_EMAIL = __SENDER_INFO[0].strip("\n")
+__SENDER_PASS = __SENDER_INFO[1].strip("\n")
 
 def sendEmail(message, recipentEmail):
     server = smtplib.SMTP('smtp.gmail.com', 587)
